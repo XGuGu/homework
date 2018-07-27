@@ -5,7 +5,7 @@ class Queue
   end
 
   def  enqueue(el)
-    @queue.unshift(el)
+    @queue.push(el)
     @size += 1
   end
 
