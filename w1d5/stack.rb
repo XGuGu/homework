@@ -17,4 +17,9 @@ class Stack
   def show
     @stack.dup
   end
+
+  def peek
+    @stack.last
+  end
+
 end
