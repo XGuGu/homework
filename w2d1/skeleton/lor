@@ -1,0 +1,139 @@
+[31mF[0m[31mF[0m[31mF[0m[31mF[0m[31mF[0m[31mF[0m[31mF[0m[31mF[0m[31mF[0m[31mF[0m[31mF[0m[31mF[0m[31mF[0m[31mF[0m[31mF[0m[31mF[0m
+
+Failures:
+
+  1) Simon#initialize starts the sequence length at 1
+     [31mFailure/Error: expect(simon.sequence_length).to eq(1)[0m
+     [31m  [0m
+     [31m  expected: 1[0m
+     [31m       got: nil[0m
+     [31m  [0m
+     [31m  (compared using ==)[0m
+     [36m# ./spec/simon_spec.rb:8:in `block (3 levels) in <top (required)>'[0m
+
+  2) Simon#initialize starts game over as false
+     [31mFailure/Error: expect(simon.game_over).to be(false)[0m
+     [31m  [0m
+     [31m  expected false[0m
+     [31m       got nil[0m
+     [36m# ./spec/simon_spec.rb:12:in `block (3 levels) in <top (required)>'[0m
+
+  3) Simon#initialize starts the sequence as an empty array
+     [31mFailure/Error: expect(simon.seq).to be_empty[0m
+     [31m  expected  to respond to `empty?`[0m
+     [36m# ./spec/simon_spec.rb:16:in `block (3 levels) in <top (required)>'[0m
+
+  4) Simon#add_random_color adds one color to the sequence
+     [31mFailure/Error: expect(simon.sequence_length).to eq(1)[0m
+     [31m  [0m
+     [31m  expected: 1[0m
+     [31m       got: nil[0m
+     [31m  [0m
+     [31m  (compared using ==)[0m
+     [36m# ./spec/simon_spec.rb:24:in `block (3 levels) in <top (required)>'[0m
+
+  5) Simon#add_random_color adds a color included in the options
+     [31mFailure/Error: expect(%w(red blue yellow green)).to include(simon.seq.last)[0m
+     [31mNoMethodError:[0m
+     [31m  undefined method `last' for nil:NilClass[0m
+     [36m# ./spec/simon_spec.rb:28:in `block (3 levels) in <top (required)>'[0m
+
+  6) Simon#add_random_color adds a random color
+     [31mFailure/Error: expect(simon.seq.all? { |color| color == simon.seq[0] }).to be(false)[0m
+     [31mNoMethodError:[0m
+     [31m  undefined method `all?' for nil:NilClass[0m
+     [36m# ./spec/simon_spec.rb:40:in `block (3 levels) in <top (required)>'[0m
+
+  7) Simon#take_turn calls #show_sequence and #require_sequence
+     [31mFailure/Error: expect(simon).to receive(:show_sequence)[0m
+     [31m  (#<Simon:0x007fd138a1eaa8>).show_sequence(any args)[0m
+     [31m      expected: 1 time with any arguments[0m
+     [31m      received: 0 times with any arguments[0m
+     [36m# ./spec/simon_spec.rb:46:in `block (3 levels) in <top (required)>'[0m
+
+  8) Simon#take_turn when the game is not over calls #round_success_message
+     [31mFailure/Error: expect(simon).to receive(:round_success_message)[0m
+     [31m  (#<Simon:0x007fd13880c0d0>).round_success_message(any args)[0m
+     [31m      expected: 1 time with any arguments[0m
+     [31m      received: 0 times with any arguments[0m
+     [36m# ./spec/simon_spec.rb:58:in `block (4 levels) in <top (required)>'[0m
+
+  9) Simon#take_turn when the game is not over increments the sequence length
+     [31mFailure/Error: expect(simon.sequence_length).to eq(2)[0m
+     [31m  [0m
+     [31m  expected: 2[0m
+     [31m       got: nil[0m
+     [31m  [0m
+     [31m  (compared using ==)[0m
+     [36m# ./spec/simon_spec.rb:64:in `block (4 levels) in <top (required)>'[0m
+
+  10) Simon#play calls #take_turn
+     [31mFailure/Error: expect(simon).to receive(:take_turn) { simon.game_over = true }[0m
+     [31m  (#<Simon:0x007fd138baeaa8>).take_turn(any args)[0m
+     [31m      expected: 1 time with any arguments[0m
+     [31m      received: 0 times with any arguments[0m
+     [36m# ./spec/simon_spec.rb:71:in `block (3 levels) in <top (required)>'[0m
+
+  11) Simon#play calls #take_turn until the game is over
+     [31mFailure/Error: expect(simon).to receive(:take_turn) {  }[0m
+     [31m  (#<Simon:0x007fd138bac050>).take_turn(any args)[0m
+     [31m      expected: 1 time with any arguments[0m
+     [31m      received: 0 times with any arguments[0m
+     [36m# ./spec/simon_spec.rb:76:in `block (3 levels) in <top (required)>'[0m
+
+  12) Simon#play calls #game_over_message and #reset_game if the game is over
+     [31mFailure/Error: expect(simon).to receive(:game_over_message)[0m
+     [31m  (#<Simon:0x007fd138bb4728>).game_over_message(any args)[0m
+     [31m      expected: 1 time with any arguments[0m
+     [31m      received: 0 times with any arguments[0m
+     [36m# ./spec/simon_spec.rb:85:in `block (3 levels) in <top (required)>'[0m
+
+  13) Simon#show_sequence calls #add_random_color
+     [31mFailure/Error: expect(simon).to receive(:add_random_color)[0m
+     [31m  (#<Simon:0x007fd138c9fe80>).add_random_color(any args)[0m
+     [31m      expected: 1 time with any arguments[0m
+     [31m      received: 0 times with any arguments[0m
+     [36m# ./spec/simon_spec.rb:93:in `block (3 levels) in <top (required)>'[0m
+
+  14) Simon#reset_game resets the sequence length to 1
+     [31mFailure/Error: expect(simon.sequence_length).to eq(1)[0m
+     [31m  [0m
+     [31m  expected: 1[0m
+     [31m       got: 4[0m
+     [31m  [0m
+     [31m  (compared using ==)[0m
+     [36m# ./spec/simon_spec.rb:107:in `block (3 levels) in <top (required)>'[0m
+
+  15) Simon#reset_game resets game over to false
+     [31mFailure/Error: expect(simon.game_over).to be(false)[0m
+     [31m  [0m
+     [31m  expected false[0m
+     [31m       got true[0m
+     [36m# ./spec/simon_spec.rb:111:in `block (3 levels) in <top (required)>'[0m
+
+  16) Simon#reset_game resets the sequence to an empty array
+     [31mFailure/Error: expect(simon.seq).to be_empty[0m
+     [31m  expected `["blue", "red", "green"].empty?` to return true, got false[0m
+     [36m# ./spec/simon_spec.rb:115:in `block (3 levels) in <top (required)>'[0m
+
+Finished in 0.02216 seconds (files took 0.16082 seconds to load)
+[31m16 examples, 16 failures[0m
+
+Failed examples:
+
+[31mrspec ./spec/simon_spec.rb:7[0m [36m# Simon#initialize starts the sequence length at 1[0m
+[31mrspec ./spec/simon_spec.rb:11[0m [36m# Simon#initialize starts game over as false[0m
+[31mrspec ./spec/simon_spec.rb:15[0m [36m# Simon#initialize starts the sequence as an empty array[0m
+[31mrspec ./spec/simon_spec.rb:23[0m [36m# Simon#add_random_color adds one color to the sequence[0m
+[31mrspec ./spec/simon_spec.rb:27[0m [36m# Simon#add_random_color adds a color included in the options[0m
+[31mrspec ./spec/simon_spec.rb:31[0m [36m# Simon#add_random_color adds a random color[0m
+[31mrspec ./spec/simon_spec.rb:45[0m [36m# Simon#take_turn calls #show_sequence and #require_sequence[0m
+[31mrspec ./spec/simon_spec.rb:57[0m [36m# Simon#take_turn when the game is not over calls #round_success_message[0m
+[31mrspec ./spec/simon_spec.rb:62[0m [36m# Simon#take_turn when the game is not over increments the sequence length[0m
+[31mrspec ./spec/simon_spec.rb:70[0m [36m# Simon#play calls #take_turn[0m
+[31mrspec ./spec/simon_spec.rb:75[0m [36m# Simon#play calls #take_turn until the game is over[0m
+[31mrspec ./spec/simon_spec.rb:83[0m [36m# Simon#play calls #game_over_message and #reset_game if the game is over[0m
+[31mrspec ./spec/simon_spec.rb:92[0m [36m# Simon#show_sequence calls #add_random_color[0m
+[31mrspec ./spec/simon_spec.rb:106[0m [36m# Simon#reset_game resets the sequence length to 1[0m
+[31mrspec ./spec/simon_spec.rb:110[0m [36m# Simon#reset_game resets game over to false[0m
+[31mrspec ./spec/simon_spec.rb:114[0m [36m# Simon#reset_game resets the sequence to an empty array[0m
