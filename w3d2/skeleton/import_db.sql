@@ -27,4 +27,5 @@ INSERT INTO
   plays (title, year, playwright_id)
 VALUES
   ('All My Sons', 1947, (SELECT id FROM playwrights WHERE name = 'Arthur Miller')),
-  ('Long Day''s Journey Into Night', 1956, (SELECT id FROM playwrights WHERE name = 'Eugene O''Neill'));
+  ('Long Day''s Journey Into Night', 1956, (SELECT id FROM playwrights WHERE name = 'Eugene O''Neill')),
+  ('All My Sons', 17897, (SELECT id FROM playwrights WHERE name = 'Arthur Miller'));

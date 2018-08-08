@@ -60,8 +60,8 @@ class Play
     SQL
     return nil if plays.empty?
 
-    Play.new(plays[0])
-
+    # Play.new(plays[0])
+    plays.map{ |play| Play.new(play) }
   end
 
   def self.find_by_playwright(name)
